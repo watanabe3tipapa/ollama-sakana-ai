@@ -2,7 +2,7 @@
 
 ## 概要
 
-Ollamaで動作するローカルLLMとSakana AIを同じ画面上で切り替えながら使えるツールです。
+Ollamaで動作するローカルLLMとSakana AIを同じWebインターフェース上で切り替えながら使えるツールです。
 
 - **Ollama**: ローカルで動作するオープンソースLLM
 - **Sakana AI**: chat.sakana.ai 提供の日本語特化AIチャットサービス

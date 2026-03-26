@@ -7,7 +7,7 @@ GradioベースのローカルUIツールで、OllamaモデルとSakana AIを簡
 
 ## 概要
 
-- **Ollama** ローカルモデルと **Sakana AI** (chat.sakana.ai) を同一个画面から切り替え可能
+- **Ollama** ローカルモデルと **Sakana AI** (chat.sakana.ai) を同じ画面の上から切り替え可能
 - モデル選択、プロンプト入力、パラメータ調整をGUIで操作可能
 - デフォルトモデル: `qwen3.5`
 - ストリーミング出力対応（Ollamaモード）
