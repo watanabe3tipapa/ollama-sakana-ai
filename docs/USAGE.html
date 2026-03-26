@@ -1,0 +1,171 @@
+ollama-model-runner/docs/USAGE.html
+```
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ollama Model Runner - 使い方</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: "SF Mono", Monaco, Consolas, monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f8f8;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ollama Model Runner - 使い方</h1>
+
+    <h2>概要</h2>
+    <p>Ollamaで動作するローカルLLMをブラウザUIから実行できるツールです。</p>
+
+    <h2>動作要件</h2>
+    <ul>
+        <li>Ollama がローカルで起動していること</li>
+        <li>Python 3.8+</li>
+        <li><a href="https://github.com/astral-sh/uv">uv</a>（パッケージ管理）</li>
+    </ul>
+
+    <h2>起動方法</h2>
+    <pre><code># 依存関係のインストール
+uv sync
+
+# アプリ起動
+uv run python app.py</code></pre>
+    <p>ブラウザで <code>http://localhost:7860</code> が開きます。</p>
+
+    <h2>機能説明</h2>
+
+    <h3>モデル選択</h3>
+    <ul>
+        <li>プルダウンからOllamaにインストール済みのモデルを選択</li>
+        <li>🔄 ボタンでモデル一覧を更新</li>
+    </ul>
+
+    <h3>サンプル選択</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>サンプル</th>
+                <th>説明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>フリートーク</td>
+                <td>空のプロンプトで自由に入力</td>
+            </tr>
+            <tr>
+                <td>要約</td>
+                <td>日本語テキストを200文字以内で要約</td>
+            </tr>
+            <tr>
+                <td>質問応答</td>
+                <td>ユーザーからの質問に対して回答</td>
+            </tr>
+            <tr>
+                <td>メール下書き</td>
+                <td>ビジネスメールの下書きを作成</td>
+            </tr>
+            <tr>
+                <td>メッセージ下書き</td>
+                <td>メッセージの下書きを作成</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>パラメータ</h3>
+    <ul>
+        <li><strong>temperature</strong>: 生成の多様性（0.0〜2.0）</li>
+        <li><strong>top_p</strong>: トークン選択の範囲（0.0〜1.0）</li>
+        <li><strong>max_new_tokens</strong>: 生成する最大トークン数</li>
+    </ul>
+
+    <h3>ボタン</h3>
+    <ul>
+        <li><strong>実行</strong>: 選択したモデルでプロンプトを送信</li>
+        <li><strong>キャンセル</strong>: 実行中のリクエストを中断</li>
+        <li><strong>クリア</strong>: プロンプトと出力をクリア</li>
+        <li><strong>ダウンロード</strong>: 完全出力をテキストファイルで保存（ファイル名: <code>output.txt</code>、文字コード: UTF-8）</li>
+        <li><strong>履歴を更新</strong>: 会話履歴を表示</li>
+    </ul>
+
+    <h3>ダウンロード機能の詳細</h3>
+    <ul>
+        <li><strong>対象</strong>: 完全出力欄（ストリーミング表示ではなく、確定した出力全体）</li>
+        <li><strong>ファイル名</strong>: <code>output.txt</code>（固定）</li>
+        <li><strong>文字コード</strong>: UTF-8</li>
+        <li><strong>動作</strong>: 「ダウンロード」ボタンをクリックすると、ブラウザからファイルがダウンロードされる</li>
+        <li><strong>制約</strong>: 完全出力欄が空の場合はダウンロードされない</li>
+    </ul>
+
+    <h3>履歴機能</h3>
+    <p>「履歴に保存」チェックボックスをONにすると、会話を保存できます。</p>
+
+    <div class="footer">
+        <p>Ollama Model Runner</p>
+    </div>
+</body>
+</html>
