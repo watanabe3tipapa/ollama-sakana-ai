@@ -1,7 +1,7 @@
 """
 GradioベースのMVP UIで、Ollamaモデル（ローカル）を実行します。
 - ローカルでOllamaが起動している必要があります（デフォルト: http://localhost:11434）
-- デフォルトモデル: llama3.2
+- デフォルトモデル: qwen3.5
 """
 
 import json
@@ -219,7 +219,7 @@ def refresh_history(user_id):
 
 # ---- Gradio UI ----
 with gr.Blocks(title="Ollama Model Runner") as demo:
-    gr.Markdown("## Ollama Model Runner (Local)")
+    gr.Markdown("## Ollama Model Runner & Sakana Chat Ratchet")
 
     with gr.Row():
         with gr.Column(scale=2):

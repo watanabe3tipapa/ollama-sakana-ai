@@ -1,7 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/version-0.3.0-green.svg)](https://github.com/watanabe3tipapa/ollama-model-runner)
 
-# Ollama Runner & Sakana Chat Ratchet
+# Ollama Model Runner & Sakana Chat Ratchet
 
 GradioベースのローカルUIツールで、OllamaモデルとSakana AIを簡単に実行できます。
 
