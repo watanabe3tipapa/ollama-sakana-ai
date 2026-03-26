@@ -1,4 +1,4 @@
-# Ollama Runner & Sakana Chat Ratchet - 使い方
+# Ollama Model Runner & Sakana Chat Ratchet - 使い方
 
 ## 概要
 
