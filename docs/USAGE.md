@@ -10,11 +10,11 @@ Ollamaで動作するローカルLLMをブラウザUIから実行できるツー
 ## 起動方法
 
 ```bash
-# 仮想環境の有効化（必要な場合）
-source .venv/bin/activate
+# 依存関係のインストール
+uv sync
 
 # アプリ起動
-python3 app.py
+uv run python app.py
 ```
 
 ブラウザで `http://localhost:7860` が開きます。

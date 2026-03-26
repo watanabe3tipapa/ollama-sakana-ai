@@ -19,13 +19,16 @@ GradioベースのローカルUIツールで、Ollamaモデルを簡単に実行
 
 - Ollamaがローカルで起動していること（デフォルト: `http://localhost:11434`）
 - Python 3.8+
-- 必要なPythonパッケージ（`requirements.txt`参照）
+- [uv](https://github.com/astral-sh/uv)（パッケージ管理）
 
 ## インストール・実行
 
 ```bash
-pip install -r requirements.txt
-python app.py
+# 依存関係のインストール
+uv sync
+
+# アプリ起動
+uv run python app.py
 ```
 
 起動後、`http://localhost:7860`にアクセスしてください。
